@@ -24,7 +24,14 @@
             "logOutput": "rpc"
         },
         {
-            "name": "Launch tests (testing package)",
+            "name": "Debug prog (current file)",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}",
+        },
+        {
+            "name": "Debug tests (current file)",
             "type": "go",
             "request": "launch",
             "mode": "test",
