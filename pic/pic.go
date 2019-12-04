@@ -2,6 +2,7 @@ package main
 
 import "golang.org/x/tour/pic"
 
+// Pic generates a pic.Show compliant [][]unit8 slice.
 func Pic(dx, dy int) [][]uint8 {
 	p := make([][]uint8, dx)
 
