@@ -73,11 +73,14 @@ type rot13Reader struct {
 
 func (rot13 *rot13Reader) Read(b []byte) ( int, error) {
 
-	n, err := rot13.r.Read(b)
-	
-	if err != nil {
-		return n, err
-	}
+	return Rot13Convert(rot13.r, b)
+}
+
+// Rot13Convert takes b length of data from the reader and rot13 encodes it.
+func Rot13Convert(r io.Reader, b []byte) (n int, err error) {
+	n, err = r.Read(b)
+
+	if (err != nil) { return }
 
 	for i := range b {
 		c := b[i]
@@ -89,5 +92,5 @@ func (rot13 *rot13Reader) Read(b []byte) ( int, error) {
 		}
 	} 
 
-	return n, err
+	return
 }
