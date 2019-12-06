@@ -61,4 +61,22 @@ func main() {
 
 		// That's nice - Go won't scream if the key is invalid, but also wont require a 2nd call to get it's value
 	}
+
+	fmt.Println("\nIterating maps")
+	{
+		var m = map[string][]string {
+			"foo": { "foo1" },
+			"bar": { "bar1", "bar2" },
+			"baz": {},
+		}
+
+		for k, v := range m {
+			fmt.Printf("key %s, value %s\n", k, v)
+		}
+
+		// Or, getting keys, and then access via map
+		for k := range m {
+			fmt.Printf("key %s, value %s\n", k, m[k])
+		}
+	}
 }
