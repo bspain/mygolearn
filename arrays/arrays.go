@@ -31,7 +31,7 @@ func main() {
 		runes[5] = 'F'
 
 		var s []rune = runes[1:4] // This is a 'slice' into (view of) the array.  Range is 'half-open' [ low : high ] - low is taken, high is omitted
-		fmt.Println(s)
+		fmt.Println(s)	// "66, 67, 68" : eg. ascii 'A', 'B', 'C'
 
 		fmt.Println(runes[0:1]) // 0th element - char('A') = 65
 		fmt.Println(runes[5:6]) // 5th element - char('F') = 70
